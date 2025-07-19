@@ -1,0 +1,100 @@
+:root {
+  --global-loader-bg: rgb(249 250 251 / 50%);;
+  --input-bg-color: #f7f9fc;
+  --toast-error-bg-color: #ffe1e3;
+  --toast-success-bf-color: #e0ffd9;
+  --text-primary: #373646;
+  --text-price: #7a1f8a;
+  --star-color: #ffa700;
+  --divider: #e2e2e2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+.MuiSvgIcon-root {
+  font-size: 2.4rem;
+}
+
+.MuiContainer-root {
+  padding: 0;
+}
+
+.MuiFilledInput-input {
+  background-color: var(--input-bg-color);
+}
+
+.MuiFormHelperText-root {
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+}
+
+.toastError {
+  background-color: var(--toast-error-bg-color);
+  padding-left: 1.5rem;
+  color: var(--text-primary);
+
+  .Toastify__close-button--light {
+    color: var(--text-primary);
+    opacity: 1;
+  }
+}
+
+.toastSuccess {
+  background-color: var(--toast-success-bf-color);
+  padding-left: 1.5rem;
+  color: var(--text-primary);
+
+  .Toastify__close-button--light {
+    color: var(--text-primary);
+    opacity: 1;
+  }
+}
+
+.MuiTableCell-root {
+  font-size: 1.4rem;
+}
+
+.MuiTablePagination-selectLabel,
+.MuiTablePagination-displayedRows {
+  font-size: 1rem;
+}
+
+.MuiButton-sizeSmall {
+  font-size: 1.2rem;
+  padding-left: 1.6rem;
+  padding-right: 1.6rem;
+}
+
+.MuiDialogTitle-root {
+  font-size: 1.8rem;
+}
+
+.bike-icon {
+  font-size: 1.4rem;
+}
+
+@media (min-width: 900px) and (max-width: 1170px) {
+  .trust-stack {
+    flex-wrap: wrap;
+
+    .avatar-stack {
+      border: none;
+    }
+
+    .MuiBox-root {
+      padding-top: 1rem;
+      margin-top: 1rem;
+      width: 100%;
+      border-top: 1px solid var(--divider);
+      .MuiTypography-root {
+        padding: 0;
+      }
+    }
+  }
+}

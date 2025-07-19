@@ -1,0 +1,64 @@
+datasource db {
+  provider = "sqlite"
+  url      = "file:bike-rental.db"
+}
+
+generator client {
+  provider = "prisma-client-js"
+  previewFeatures = ["referentialActions"]
+}
+
+model User {
+  id         Int      @id @default(autoincrement())
+  name       String
+  phone      String
+  email      String   @unique
+  password   String
+  role       String
+  createdAt  DateTime @default(now())
+  rating     Rating[]
+  booking    Booking[]
+}
+
+model Bike {
+  id            Int      @id @default(autoincrement())
+  model         String
+  color         String
+  location      String
+  imageUrl      String?
+  isAvailable   Boolean  @default(true)
+  pricePerHour  Float
+  currency      String   @default("USD")
+  createdAt     DateTime @default(now())
+  rating        Rating[]
+  booking       Booking[]
+}
+
+model Booking {
+  id              Int       @id @default(autoincrement())
+  bikeId          Int
+  bike            Bike      @relation(fields: [bikeId], references: [id], onDelete: Cascade)
+  userId          Int
+  user            User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  rating          Rating[]
+  price           Float
+  currency        String    @default("USD")
+  pickupDate      DateTime
+  pickupLocation  String
+  dropoffDate     DateTime
+  dropoffLocation String
+  completed       Boolean   @default(false)
+  createdAt       DateTime  @default(now())
+}
+
+model Rating {
+  id              Int       @id @default(autoincrement())
+  userId          Int
+  user            User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  bikeId          Int
+  bike            Bike      @relation(fields: [bikeId], references: [id], onDelete: Cascade)
+  bookingId       Int
+  booking         Booking   @relation(fields: [bookingId], references: [id], onDelete: Cascade)
+  score           Int
+  createdAt       DateTime  @default(now())
+}

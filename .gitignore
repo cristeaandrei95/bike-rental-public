@@ -1,0 +1,13 @@
+node_modules
+migrations
+dist
+.idea
+.DS_Store
+bike-rental.db
+bike-rental.db-journal
+
+.env
+.env.local
+.env.dev
+.env.stg
+.env.prod
