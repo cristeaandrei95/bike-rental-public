@@ -15,6 +15,6 @@ Before starting the client you must:
 
 ## ADDITIONAL NOTES
 1. For convenience I have added some sample bike images in the folder sample_bike_images of the root of the project.
-2. populate the env variables EMAIL_USER, EMAIL_PASS in server .env with a gmail username and password
-3. populate the env variable JWT_SECRET with a random string
-4. for populating the env variables CLOUDINARY_NAME, CLOUDINARY_API_KEY and CLOUDINARY_API_SECRET, you will have to create an account on Cloudinary
+2. populate the env variables `EMAIL_USER`, `EMAIL_PASS` in server .env with a gmail username and password
+3. populate the env variable `JWT_SECRET` with a random string
+4. for populating the env variables `CLOUDINARY_NAME`, `CLOUDINARY_API_KEY` and `CLOUDINARY_API_SECRET`, you will have to create an account on Cloudinary
